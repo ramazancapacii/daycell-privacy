@@ -1,1 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daycell – Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --accent: #2d5a3d;
+      --accent-light: #e8f0eb;
+      --text: #1a1a18;
+      --muted: #6b6b68;
+      --border: #e2ddd6;
+      --tag: #2d5a3d;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 60px 40px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 0%, rgba(255,255,255,.08) 0%, transparent 60%);
+    }
+    .app-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 400;
+      letter-spacing: -.5px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 15px;
+      opacity: .7;
+      margin-top: 8px;
+    }
+
+    /* ── Lang toggle ── */
+    .lang-toggle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .lang-btn {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    .lang-btn.active,
+    .lang-btn:hover {
+      background: rgba(255,255,255,.28);
+      border-color: rgba(255,255,255,.5);
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    .section-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 20px;
+      transition: box-shadow .2s;
+    }
+    .section-block:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    }
+
+    .section-num {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 6px;
+      padding: 3px 10px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    p { color: var(--muted); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 12px;
+    }
+    ul li {
+      color: var(--muted);
+      padding: 5px 0 5px 20px;
+      position: relative;
+      font-size: 15px;
+    }
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 6px;
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    /* ── AdMob highlight box ── */
+    .admob-box {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .admob-box p { color: #2d5a3d; margin: 0; font-size: 15px; }
+    .admob-box a { color: var(--accent); font-weight: 500; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Steps (opt-out) ── */
+    .steps li {
+      padding: 8px 0 8px 28px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before { content: '→'; font-size: 14px; top: 10px; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer strong { color: var(--text); }
+
+    /* ── Language sections ── */
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
+
+    /* ── RTL (Arabic) overrides ── */
+    [dir="rtl"] ul li { padding: 5px 20px 5px 0; }
+    [dir="rtl"] ul li::before { left: auto; right: 6px; }
+    [dir="rtl"] .steps li { padding: 8px 28px 8px 0; }
+    [dir="rtl"] .steps li::before { content: '←'; }
+    [dir="rtl"] .admob-box {
+      border-left: none;
+      border-right: 3px solid var(--accent);
+      border-radius: 10px 0 0 10px;
+    }
+
+    @media (max-width: 600px) {
+      .section-block { padding: 24px 20px; }
+      header { padding: 44px 20px 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-badge">Privacy Policy</div>
+  <h1>Daycell</h1>
+  <p id="header-sub">Your 365-day journal, fully private.</p>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang-btn="en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" data-lang-btn="tr" onclick="setLang('tr')">Türkçe</button>
+    <button class="lang-btn" data-lang-btn="es" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" data-lang-btn="zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" data-lang-btn="hi" onclick="setLang('hi')">हिन्दी</button>
+    <button class="lang-btn" data-lang-btn="ar" onclick="setLang('ar')">العربية</button>
+    <button class="lang-btn" data-lang-btn="pt" onclick="setLang('pt')">Português</button>
+    <button class="lang-btn" data-lang-btn="ru" onclick="setLang('ru')">Русский</button>
+    <button class="lang-btn" data-lang-btn="ja" onclick="setLang('ja')">日本語</button>
+    <button class="lang-btn" data-lang-btn="de" onclick="setLang('de')">Deutsch</button>
+    <button class="lang-btn" data-lang-btn="fr" onclick="setLang('fr')">Français</button>
+    <button class="lang-btn" data-lang-btn="ko" onclick="setLang('ko')">한국어</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ══════════════ ENGLISH ══════════════ -->
+  <div data-lang="en" class="active">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>Introduction</h2>
+      <p>Welcome to Daycell. This Privacy Policy explains how the Daycell application ("App") handles information when you use our service on iOS or Android. We are committed to protecting your privacy.</p>
+      <p>Last updated: <strong>June 7, 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>Information We Collect</h2>
+      <p><strong>Daycell itself</strong> does not collect, store, or transmit any personal information. We do not collect:</p>
+      <ul>
+        <li>Your name, email address, or contact information</li>
+        <li>Account credentials (no account is required)</li>
+        <li>Your notes or any content you create in the App</li>
+        <li>Usage analytics or behavioral data</li>
+      </ul>
+      <p><strong>Google AdMob</strong> (our ad provider) may collect:</p>
+      <ul>
+        <li>Advertising ID (IDFA on iOS / GAID on Android)</li>
+        <li>Approximate location (country/region level)</li>
+        <li>Device information (model, OS version)</li>
+        <li>Ad interaction data (clicks, impressions)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>How Your Notes Are Stored</h2>
+      <p>All notes and entries you create in Daycell are stored <strong>exclusively on your local device</strong>. This data never leaves your device and is never transmitted to any server, cloud service, or third party — including us. We have no access to your notes under any circumstances.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>Advertising — Google AdMob</h2>
+      <p>Daycell displays advertisements via <strong>Google AdMob</strong> (Google LLC). AdMob may use your device's Advertising ID to serve relevant ads.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> Before showing personalized ads, the App will request your permission via Apple's App Tracking Transparency (ATT) framework. You can allow or deny at any time.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> In regions covered by GDPR (EEA &amp; UK), Google's UMP consent dialog will appear before showing personalized ads.</p>
+      </div>
+
+      <p>For more on how Google uses advertising data:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>Your Advertising Choices</h2>
+      <p>You can opt out of personalized advertising at any time:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> Settings → Privacy &amp; Security → Tracking → disable for Daycell</li>
+        <li><strong>Android:</strong> Settings → Google → Ads → "Opt out of Ads Personalization"</li>
+        <li>You can also reset your Advertising ID from these same menus</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — European Users</h2>
+      <p>If you are in the EEA or UK, a consent dialog will appear when you first open Daycell asking whether you agree to personalized advertising. You may withdraw or change your consent at any time within the App settings. The data controller for advertising data is <strong>Google LLC</strong>. Daycell does not process personal data on its own servers.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — California Users</h2>
+      <p>Daycell does not sell your personal information. Any data collected via Google AdMob is governed by Google's own CCPA compliance. You may opt out of personalized ads as described in Section 5.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>No Account Required</h2>
+      <p>Daycell does not require you to create an account, log in, or provide any personal information. All features are available without identifying yourself.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>Children's Privacy</h2>
+      <p>Daycell is not directed at children under 13. We do not knowingly collect personal data from children. Google AdMob is configured to serve only non-personalized ads when a user is identified as a child.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be reflected with an updated date at the top of this page. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>Contact Us</h2>
+      <p>If you have questions about this Privacy Policy, please contact us:</p>
+      <ul>
+        <li>Email: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>Website: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /en -->
+
+  <!-- ══════════════ TÜRKÇE ══════════════ -->
+  <div data-lang="tr">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>Giriş</h2>
+      <p>Daycell'e hoş geldiniz. Bu Gizlilik Politikası, Daycell uygulamasının ("Uygulama") iOS veya Android'de bilgileri nasıl ele aldığını açıklar. Gizliliğinizi korumaya kararlıyız.</p>
+      <p>Son güncelleme: <strong>7 Haziran 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>Toplanan Bilgiler</h2>
+      <p><strong>Daycell'in kendisi</strong> hiçbir kişisel bilgi toplamaz, depolamaz veya iletmez. Toplamadıklarımız:</p>
+      <ul>
+        <li>Adınız, e-posta adresiniz veya iletişim bilgileriniz</li>
+        <li>Hesap bilgileri (hesap gerekmez)</li>
+        <li>Notlarınız veya Uygulama içinde oluşturduğunuz içerikler</li>
+        <li>Kullanım analitiği veya davranışsal veriler</li>
+      </ul>
+      <p><strong>Google AdMob</strong> (reklam sağlayıcımız) tarafından toplanabilecek veriler:</p>
+      <ul>
+        <li>Reklam Kimliği (iOS'ta IDFA / Android'de GAID)</li>
+        <li>Yaklaşık konum (ülke/bölge düzeyi)</li>
+        <li>Cihaz bilgileri (model, işletim sistemi sürümü)</li>
+        <li>Reklam etkileşim verileri (tıklamalar, gösterimler)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>Notlarınız Nasıl Saklanır</h2>
+      <p>Daycell'de oluşturduğunuz tüm notlar yalnızca <strong>cihazınızda yerel olarak</strong> saklanır. Bu veriler hiçbir zaman cihazınızdan ayrılmaz; hiçbir sunucuya, bulut hizmetine veya üçüncü tarafa — biz dahil — iletilmez.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>Reklamlar — Google AdMob</h2>
+      <p>Daycell, <strong>Google AdMob</strong> (Google LLC) aracılığıyla reklam gösterir. AdMob, alakalı reklamlar sunmak için cihazınızın Reklam Kimliği'ni kullanabilir.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> Kişiselleştirilmiş reklam göstermeden önce Uygulama, Apple'ın App Tracking Transparency (ATT) çerçevesiyle izninizi isteyecektir. İstediğiniz zaman izin verebilir veya reddedebilirsiniz.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> GDPR kapsamındaki bölgelerde (AEA ve Birleşik Krallık) kişiselleştirilmiş reklam göstermeden önce Google'ın UMP onay iletişim kutusu görünecektir.</p>
+      </div>
+
+      <p>Google'ın reklam verilerini nasıl kullandığı hakkında daha fazla bilgi:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>Reklam Tercihleriniz</h2>
+      <p>Kişiselleştirilmiş reklamı istediğiniz zaman devre dışı bırakabilirsiniz:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> Ayarlar → Gizlilik ve Güvenlik → İzleme → Daycell için devre dışı bırakın</li>
+        <li><strong>Android:</strong> Ayarlar → Google → Reklamlar → "Reklam Kişiselleştirmesinden Çık"</li>
+        <li>Reklam Kimliğinizi aynı menülerden sıfırlayabilirsiniz</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — Avrupa Kullanıcıları</h2>
+      <p>AEA veya Birleşik Krallık'ta bulunuyorsanız, Daycell'i ilk açtığınızda kişiselleştirilmiş reklamcılığa onay verip vermeyeceğinizi soran bir iletişim kutusu görünecektir. Onayınızı istediğiniz zaman Uygulama ayarlarından geri alabilir veya değiştirebilirsiniz. Reklam verileri için veri sorumlusu <strong>Google LLC</strong>'dir.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>KVKK — Türkiye Kullanıcıları</h2>
+      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında: Daycell, kendi sistemlerinde hiçbir kişisel veri işlememektedir. Google AdMob aracılığıyla toplanan reklam verileri Google'ın gizlilik politikasına tabidir. Sorularınız için bizimle iletişime geçebilirsiniz.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>Hesap Gerekmiyor</h2>
+      <p>Daycell, hesap oluşturmanızı veya giriş yapmanızı gerektirmez. Kişisel bilgi vermeden tüm özellikleri kullanabilirsiniz.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>Çocukların Gizliliği</h2>
+      <p>Daycell, 13 yaşın altındaki çocuklara yönelik değildir. Çocuklardan bilerek kişisel bilgi toplamayız. Google AdMob, bir kullanıcının çocuk olduğu belirlenirse yalnızca kişiselleştirilmemiş reklamlar sunacak şekilde yapılandırılmıştır.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>Bu Politikadaki Değişiklikler</h2>
+      <p>Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Değişiklikler, bu sayfanın üstündeki güncelleme tarihi ile yansıtılır. Değişikliklerden sonra kullanmaya devam etmek yeni politikayı kabul ettiğiniz anlamına gelir.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>İletişim</h2>
+      <p>Bu Gizlilik Politikası hakkında sorularınız için:</p>
+      <ul>
+        <li>E-posta: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>Web sitesi: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /tr -->
+
+  <!-- ══════════════ ESPAÑOL ══════════════ -->
+  <div data-lang="es">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>Introducción</h2>
+      <p>Bienvenido a Daycell. Esta Política de Privacidad explica cómo la aplicación Daycell ("App") gestiona la información cuando usas nuestro servicio en iOS o Android. Nos comprometemos a proteger tu privacidad.</p>
+      <p>Última actualización: <strong>7 de junio de 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>Información que Recopilamos</h2>
+      <p><strong>Daycell en sí</strong> no recopila, almacena ni transmite ninguna información personal. No recopilamos:</p>
+      <ul>
+        <li>Tu nombre, correo electrónico o información de contacto</li>
+        <li>Credenciales de cuenta (no se requiere cuenta)</li>
+        <li>Tus notas o cualquier contenido que crees en la App</li>
+        <li>Análisis de uso o datos de comportamiento</li>
+      </ul>
+      <p><strong>Google AdMob</strong> (nuestro proveedor de anuncios) puede recopilar:</p>
+      <ul>
+        <li>Identificador de publicidad (IDFA en iOS / GAID en Android)</li>
+        <li>Ubicación aproximada (nivel de país/región)</li>
+        <li>Información del dispositivo (modelo, versión del SO)</li>
+        <li>Datos de interacción con anuncios (clics, impresiones)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>Cómo se Almacenan tus Notas</h2>
+      <p>Todas las notas y entradas que creas en Daycell se almacenan <strong>exclusivamente en tu dispositivo local</strong>. Estos datos nunca salen de tu dispositivo y nunca se transmiten a ningún servidor, servicio en la nube o tercero, incluidos nosotros. No tenemos acceso a tus notas bajo ninguna circunstancia.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>Publicidad — Google AdMob</h2>
+      <p>Daycell muestra anuncios a través de <strong>Google AdMob</strong> (Google LLC). AdMob puede usar el Identificador de publicidad de tu dispositivo para mostrar anuncios relevantes.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> Antes de mostrar anuncios personalizados, la App solicitará tu permiso mediante el marco de Transparencia de Seguimiento de Apps (ATT) de Apple. Puedes permitir o denegar en cualquier momento.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> En regiones cubiertas por el RGPD (EEE y Reino Unido), aparecerá el diálogo de consentimiento UMP de Google antes de mostrar anuncios personalizados.</p>
+      </div>
+
+      <p>Para más información sobre cómo Google usa los datos publicitarios:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>Tus Opciones de Publicidad</h2>
+      <p>Puedes desactivar la publicidad personalizada en cualquier momento:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> Ajustes → Privacidad y seguridad → Seguimiento → desactivar para Daycell</li>
+        <li><strong>Android:</strong> Ajustes → Google → Anuncios → "Inhabilitar personalización de anuncios"</li>
+        <li>También puedes restablecer tu Identificador de publicidad desde estos mismos menús</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>RGPD — Usuarios Europeos</h2>
+      <p>Si te encuentras en el EEE o el Reino Unido, aparecerá un diálogo de consentimiento cuando abras Daycell por primera vez preguntando si aceptas la publicidad personalizada. Puedes retirar o cambiar tu consentimiento en cualquier momento en los ajustes de la App. El responsable del tratamiento de los datos publicitarios es <strong>Google LLC</strong>. Daycell no procesa datos personales en sus propios servidores.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — Usuarios de California</h2>
+      <p>Daycell no vende tu información personal. Cualquier dato recopilado a través de Google AdMob se rige por el propio cumplimiento de la CCPA de Google. Puedes desactivar los anuncios personalizados como se describe en la Sección 5.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>No se Requiere Cuenta</h2>
+      <p>Daycell no requiere que crees una cuenta, inicies sesión ni proporciones ninguna información personal. Todas las funciones están disponibles sin identificarte.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>Privacidad de los Niños</h2>
+      <p>Daycell no está dirigido a niños menores de 13 años. No recopilamos conscientemente datos personales de niños. Google AdMob está configurado para mostrar solo anuncios no personalizados cuando se identifica a un usuario como niño.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>Cambios en esta Política</h2>
+      <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Los cambios se reflejarán con una fecha actualizada en la parte superior de esta página. El uso continuado de la App después de los cambios constituye la aceptación de la política actualizada.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>Contáctanos</h2>
+      <p>Si tienes preguntas sobre esta Política de Privacidad, contáctanos:</p>
+      <ul>
+        <li>Correo electrónico: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>Sitio web: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /es -->
+
+  <!-- ══════════════ 中文 ══════════════ -->
+  <div data-lang="zh">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>简介</h2>
+      <p>欢迎使用 Daycell。本隐私政策说明 Daycell 应用程序（"应用"）在您于 iOS 或 Android 上使用我们的服务时如何处理信息。我们致力于保护您的隐私。</p>
+      <p>最后更新：<strong>2025年6月7日</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>我们收集的信息</h2>
+      <p><strong>Daycell 本身</strong>不会收集、存储或传输任何个人信息。我们不会收集：</p>
+      <ul>
+        <li>您的姓名、电子邮件地址或联系信息</li>
+        <li>账户凭据（无需账户）</li>
+        <li>您的笔记或您在应用中创建的任何内容</li>
+        <li>使用分析或行为数据</li>
+      </ul>
+      <p><strong>Google AdMob</strong>（我们的广告提供商）可能会收集：</p>
+      <ul>
+        <li>广告标识符（iOS 上的 IDFA / Android 上的 GAID）</li>
+        <li>大致位置（国家/地区级别）</li>
+        <li>设备信息（型号、操作系统版本）</li>
+        <li>广告互动数据（点击、展示）</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>您的笔记如何存储</h2>
+      <p>您在 Daycell 中创建的所有笔记和条目<strong>仅存储在您的本地设备上</strong>。这些数据永远不会离开您的设备，也永远不会传输到任何服务器、云服务或第三方——包括我们。在任何情况下，我们都无法访问您的笔记。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>广告 — Google AdMob</h2>
+      <p>Daycell 通过 <strong>Google AdMob</strong>（Google LLC）展示广告。AdMob 可能会使用您设备的广告标识符来投放相关广告。</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS：</strong>在展示个性化广告之前，应用会通过 Apple 的应用跟踪透明度（ATT）框架请求您的许可。您可以随时允许或拒绝。</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android：</strong>在受 GDPR 覆盖的地区（欧洲经济区和英国），在展示个性化广告之前会出现 Google 的 UMP 同意对话框。</p>
+      </div>
+
+      <p>有关 Google 如何使用广告数据的更多信息：</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>您的广告选择</h2>
+      <p>您可以随时选择退出个性化广告：</p>
+      <ul class="steps">
+        <li><strong>iOS：</strong>设置 → 隐私与安全性 → 跟踪 → 为 Daycell 禁用</li>
+        <li><strong>Android：</strong>设置 → Google → 广告 → "选择停用广告个性化功能"</li>
+        <li>您也可以在这些相同的菜单中重置您的广告标识符</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — 欧洲用户</h2>
+      <p>如果您位于欧洲经济区或英国，首次打开 Daycell 时会出现一个同意对话框，询问您是否同意个性化广告。您可以随时在应用设置中撤回或更改您的同意。广告数据的数据控制者是 <strong>Google LLC</strong>。Daycell 不在自己的服务器上处理个人数据。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — 加州用户</h2>
+      <p>Daycell 不会出售您的个人信息。通过 Google AdMob 收集的任何数据均受 Google 自身的 CCPA 合规约束。您可以按照第 5 节所述选择退出个性化广告。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>无需账户</h2>
+      <p>Daycell 不要求您创建账户、登录或提供任何个人信息。无需表明身份即可使用所有功能。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>儿童隐私</h2>
+      <p>Daycell 不面向 13 岁以下的儿童。我们不会故意收集儿童的个人数据。当用户被识别为儿童时，Google AdMob 配置为仅投放非个性化广告。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>本政策的变更</h2>
+      <p>我们可能会不时更新本隐私政策。变更将通过本页顶部的更新日期反映。变更后继续使用应用即表示接受更新后的政策。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>联系我们</h2>
+      <p>如果您对本隐私政策有任何疑问，请联系我们：</p>
+      <ul>
+        <li>电子邮件：<a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>网站：<a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /zh -->
+
+  <!-- ══════════════ हिन्दी ══════════════ -->
+  <div data-lang="hi">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>परिचय</h2>
+      <p>Daycell में आपका स्वागत है। यह गोपनीयता नीति बताती है कि जब आप iOS या Android पर हमारी सेवा का उपयोग करते हैं तो Daycell एप्लिकेशन ("ऐप") जानकारी को कैसे संभालता है। हम आपकी गोपनीयता की रक्षा के लिए प्रतिबद्ध हैं।</p>
+      <p>अंतिम अपडेट: <strong>7 जून 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>हम कौन सी जानकारी एकत्र करते हैं</h2>
+      <p><strong>Daycell स्वयं</strong> कोई भी व्यक्तिगत जानकारी एकत्र, संग्रहीत या प्रसारित नहीं करता है। हम एकत्र नहीं करते:</p>
+      <ul>
+        <li>आपका नाम, ईमेल पता या संपर्क जानकारी</li>
+        <li>खाता क्रेडेंशियल (कोई खाता आवश्यक नहीं)</li>
+        <li>आपके नोट्स या ऐप में आपके द्वारा बनाई गई कोई भी सामग्री</li>
+        <li>उपयोग विश्लेषण या व्यवहार संबंधी डेटा</li>
+      </ul>
+      <p><strong>Google AdMob</strong> (हमारा विज्ञापन प्रदाता) एकत्र कर सकता है:</p>
+      <ul>
+        <li>विज्ञापन आईडी (iOS पर IDFA / Android पर GAID)</li>
+        <li>अनुमानित स्थान (देश/क्षेत्र स्तर)</li>
+        <li>डिवाइस जानकारी (मॉडल, OS संस्करण)</li>
+        <li>विज्ञापन इंटरैक्शन डेटा (क्लिक, इंप्रेशन)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>आपके नोट्स कैसे संग्रहीत किए जाते हैं</h2>
+      <p>Daycell में आपके द्वारा बनाए गए सभी नोट्स और प्रविष्टियाँ <strong>केवल आपके स्थानीय डिवाइस पर</strong> संग्रहीत की जाती हैं। यह डेटा कभी भी आपके डिवाइस से बाहर नहीं जाता और कभी भी किसी सर्वर, क्लाउड सेवा या तीसरे पक्ष — हमारे सहित — को प्रसारित नहीं किया जाता। किसी भी परिस्थिति में हमारे पास आपके नोट्स तक पहुंच नहीं है।</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>विज्ञापन — Google AdMob</h2>
+      <p>Daycell, <strong>Google AdMob</strong> (Google LLC) के माध्यम से विज्ञापन प्रदर्शित करता है। AdMob प्रासंगिक विज्ञापन दिखाने के लिए आपके डिवाइस की विज्ञापन आईडी का उपयोग कर सकता है।</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> व्यक्तिगत विज्ञापन दिखाने से पहले, ऐप Apple के App Tracking Transparency (ATT) ढांचे के माध्यम से आपकी अनुमति का अनुरोध करेगा। आप किसी भी समय अनुमति दे सकते हैं या अस्वीकार कर सकते हैं।</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> GDPR द्वारा कवर किए गए क्षेत्रों (EEA और यूके) में, व्यक्तिगत विज्ञापन दिखाने से पहले Google का UMP सहमति संवाद दिखाई देगा।</p>
+      </div>
+
+      <p>Google विज्ञापन डेटा का उपयोग कैसे करता है, इसके बारे में अधिक जानकारी के लिए:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>आपके विज्ञापन विकल्प</h2>
+      <p>आप किसी भी समय व्यक्तिगत विज्ञापन से बाहर निकल सकते हैं:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> सेटिंग्स → गोपनीयता और सुरक्षा → ट्रैकिंग → Daycell के लिए अक्षम करें</li>
+        <li><strong>Android:</strong> सेटिंग्स → Google → विज्ञापन → "विज्ञापन वैयक्तिकरण से बाहर निकलें"</li>
+        <li>आप इन्हीं मेनू से अपनी विज्ञापन आईडी को रीसेट भी कर सकते हैं</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — यूरोपीय उपयोगकर्ता</h2>
+      <p>यदि आप EEA या यूके में हैं, तो जब आप पहली बार Daycell खोलेंगे तो एक सहमति संवाद दिखाई देगा जो पूछेगा कि क्या आप व्यक्तिगत विज्ञापन से सहमत हैं। आप ऐप सेटिंग्स में किसी भी समय अपनी सहमति वापस ले सकते हैं या बदल सकते हैं। विज्ञापन डेटा के लिए डेटा नियंत्रक <strong>Google LLC</strong> है। Daycell अपने सर्वर पर व्यक्तिगत डेटा संसाधित नहीं करता है।</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — कैलिफ़ोर्निया उपयोगकर्ता</h2>
+      <p>Daycell आपकी व्यक्तिगत जानकारी नहीं बेचता है। Google AdMob के माध्यम से एकत्र किया गया कोई भी डेटा Google के स्वयं के CCPA अनुपालन द्वारा शासित होता है। आप धारा 5 में वर्णित अनुसार व्यक्तिगत विज्ञापनों से बाहर निकल सकते हैं।</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>कोई खाता आवश्यक नहीं</h2>
+      <p>Daycell को आपको खाता बनाने, लॉग इन करने या कोई व्यक्तिगत जानकारी प्रदान करने की आवश्यकता नहीं है। अपनी पहचान बताए बिना सभी सुविधाएँ उपलब्ध हैं।</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>बच्चों की गोपनीयता</h2>
+      <p>Daycell 13 वर्ष से कम उम्र के बच्चों के लिए निर्देशित नहीं है। हम जानबूझकर बच्चों से व्यक्तिगत डेटा एकत्र नहीं करते हैं। जब किसी उपयोगकर्ता को बच्चे के रूप में पहचाना जाता है तो Google AdMob केवल गैर-व्यक्तिगत विज्ञापन दिखाने के लिए कॉन्फ़िगर किया गया है।</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>इस नीति में परिवर्तन</h2>
+      <p>हम समय-समय पर इस गोपनीयता नीति को अपडेट कर सकते हैं। परिवर्तन इस पृष्ठ के शीर्ष पर एक अद्यतन तिथि के साथ दर्शाए जाएंगे। परिवर्तनों के बाद ऐप का निरंतर उपयोग अद्यतन नीति की स्वीकृति है।</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>हमसे संपर्क करें</h2>
+      <p>यदि इस गोपनीयता नीति के बारे में आपके कोई प्रश्न हैं, तो कृपया हमसे संपर्क करें:</p>
+      <ul>
+        <li>ईमेल: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>वेबसाइट: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /hi -->
+
+  <!-- ══════════════ العربية ══════════════ -->
+  <div data-lang="ar" dir="rtl">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>مقدمة</h2>
+      <p>مرحبًا بك في Daycell. توضح سياسة الخصوصية هذه كيفية تعامل تطبيق Daycell ("التطبيق") مع المعلومات عند استخدامك لخدمتنا على iOS أو Android. نحن ملتزمون بحماية خصوصيتك.</p>
+      <p>آخر تحديث: <strong>7 يونيو 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>المعلومات التي نجمعها</h2>
+      <p><strong>Daycell نفسه</strong> لا يجمع أو يخزّن أو ينقل أي معلومات شخصية. نحن لا نجمع:</p>
+      <ul>
+        <li>اسمك أو عنوان بريدك الإلكتروني أو معلومات الاتصال الخاصة بك</li>
+        <li>بيانات اعتماد الحساب (لا يلزم وجود حساب)</li>
+        <li>ملاحظاتك أو أي محتوى تنشئه في التطبيق</li>
+        <li>تحليلات الاستخدام أو البيانات السلوكية</li>
+      </ul>
+      <p>قد يجمع <strong>Google AdMob</strong> (مزوّد الإعلانات لدينا):</p>
+      <ul>
+        <li>معرّف الإعلانات (IDFA على iOS / GAID على Android)</li>
+        <li>الموقع التقريبي (على مستوى البلد/المنطقة)</li>
+        <li>معلومات الجهاز (الطراز، إصدار نظام التشغيل)</li>
+        <li>بيانات التفاعل مع الإعلانات (النقرات، مرات الظهور)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>كيف يتم تخزين ملاحظاتك</h2>
+      <p>يتم تخزين جميع الملاحظات والإدخالات التي تنشئها في Daycell <strong>حصريًا على جهازك المحلي</strong>. لا تغادر هذه البيانات جهازك أبدًا ولا يتم نقلها إلى أي خادم أو خدمة سحابية أو طرف ثالث — بما في ذلك نحن. ليس لدينا إمكانية الوصول إلى ملاحظاتك تحت أي ظرف من الظروف.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>الإعلانات — Google AdMob</h2>
+      <p>يعرض Daycell إعلانات عبر <strong>Google AdMob</strong> (Google LLC). قد يستخدم AdMob معرّف الإعلانات لجهازك لعرض إعلانات ذات صلة.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> قبل عرض الإعلانات المخصصة، سيطلب التطبيق إذنك عبر إطار عمل شفافية تتبع التطبيقات (ATT) من Apple. يمكنك السماح أو الرفض في أي وقت.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> في المناطق التي تشملها اللائحة العامة لحماية البيانات (المنطقة الاقتصادية الأوروبية والمملكة المتحدة)، سيظهر مربع حوار موافقة UMP من Google قبل عرض الإعلانات المخصصة.</p>
+      </div>
+
+      <p>لمزيد من المعلومات حول كيفية استخدام Google لبيانات الإعلانات:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>خياراتك الإعلانية</h2>
+      <p>يمكنك إلغاء الاشتراك في الإعلانات المخصصة في أي وقت:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> الإعدادات ← الخصوصية والأمان ← التتبع ← تعطيله لـ Daycell</li>
+        <li><strong>Android:</strong> الإعدادات ← Google ← الإعلانات ← "إلغاء الاشتراك في تخصيص الإعلانات"</li>
+        <li>يمكنك أيضًا إعادة تعيين معرّف الإعلانات من نفس هذه القوائم</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>اللائحة العامة لحماية البيانات (GDPR) — المستخدمون الأوروبيون</h2>
+      <p>إذا كنت في المنطقة الاقتصادية الأوروبية أو المملكة المتحدة، فسيظهر مربع حوار موافقة عند فتحك Daycell لأول مرة يسألك عما إذا كنت توافق على الإعلانات المخصصة. يمكنك سحب موافقتك أو تغييرها في أي وقت ضمن إعدادات التطبيق. المتحكم في بيانات الإعلانات هو <strong>Google LLC</strong>. لا يعالج Daycell البيانات الشخصية على خوادمه الخاصة.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — مستخدمو كاليفورنيا</h2>
+      <p>لا يبيع Daycell معلوماتك الشخصية. تخضع أي بيانات يتم جمعها عبر Google AdMob لامتثال Google الخاص بـ CCPA. يمكنك إلغاء الاشتراك في الإعلانات المخصصة كما هو موضح في القسم 5.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>لا حاجة إلى حساب</h2>
+      <p>لا يتطلب Daycell منك إنشاء حساب أو تسجيل الدخول أو تقديم أي معلومات شخصية. جميع الميزات متاحة دون الكشف عن هويتك.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>خصوصية الأطفال</h2>
+      <p>Daycell غير موجّه للأطفال دون سن 13 عامًا. نحن لا نجمع عن قصد بيانات شخصية من الأطفال. تم تكوين Google AdMob لعرض إعلانات غير مخصصة فقط عند تحديد المستخدم كطفل.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>التغييرات على هذه السياسة</h2>
+      <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. ستنعكس التغييرات بتاريخ محدّث في أعلى هذه الصفحة. يشكل الاستمرار في استخدام التطبيق بعد التغييرات قبولًا للسياسة المحدّثة.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>اتصل بنا</h2>
+      <p>إذا كانت لديك أسئلة حول سياسة الخصوصية هذه، فيرجى الاتصال بنا:</p>
+      <ul>
+        <li>البريد الإلكتروني: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>الموقع الإلكتروني: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /ar -->
+
+  <!-- ══════════════ PORTUGUÊS ══════════════ -->
+  <div data-lang="pt">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>Introdução</h2>
+      <p>Bem-vindo ao Daycell. Esta Política de Privacidade explica como o aplicativo Daycell ("App") lida com informações quando você usa nosso serviço no iOS ou Android. Estamos comprometidos em proteger sua privacidade.</p>
+      <p>Última atualização: <strong>7 de junho de 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>Informações que Coletamos</h2>
+      <p><strong>O Daycell em si</strong> não coleta, armazena ou transmite nenhuma informação pessoal. Não coletamos:</p>
+      <ul>
+        <li>Seu nome, endereço de e-mail ou informações de contato</li>
+        <li>Credenciais de conta (nenhuma conta é necessária)</li>
+        <li>Suas notas ou qualquer conteúdo que você criar no App</li>
+        <li>Análises de uso ou dados comportamentais</li>
+      </ul>
+      <p><strong>O Google AdMob</strong> (nosso provedor de anúncios) pode coletar:</p>
+      <ul>
+        <li>ID de publicidade (IDFA no iOS / GAID no Android)</li>
+        <li>Localização aproximada (nível de país/região)</li>
+        <li>Informações do dispositivo (modelo, versão do SO)</li>
+        <li>Dados de interação com anúncios (cliques, impressões)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>Como Suas Notas São Armazenadas</h2>
+      <p>Todas as notas e entradas que você cria no Daycell são armazenadas <strong>exclusivamente no seu dispositivo local</strong>. Esses dados nunca saem do seu dispositivo e nunca são transmitidos a nenhum servidor, serviço de nuvem ou terceiro — incluindo nós. Não temos acesso às suas notas em nenhuma circunstância.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>Publicidade — Google AdMob</h2>
+      <p>O Daycell exibe anúncios por meio do <strong>Google AdMob</strong> (Google LLC). O AdMob pode usar o ID de publicidade do seu dispositivo para veicular anúncios relevantes.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> Antes de exibir anúncios personalizados, o App solicitará sua permissão por meio da estrutura de Transparência de Rastreamento de Apps (ATT) da Apple. Você pode permitir ou negar a qualquer momento.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> Em regiões cobertas pelo GDPR (EEE e Reino Unido), a caixa de diálogo de consentimento UMP do Google aparecerá antes de exibir anúncios personalizados.</p>
+      </div>
+
+      <p>Para saber mais sobre como o Google usa dados de publicidade:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>Suas Opções de Publicidade</h2>
+      <p>Você pode cancelar a publicidade personalizada a qualquer momento:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> Ajustes → Privacidade e Segurança → Rastreamento → desativar para o Daycell</li>
+        <li><strong>Android:</strong> Configurações → Google → Anúncios → "Desativar personalização de anúncios"</li>
+        <li>Você também pode redefinir seu ID de publicidade nesses mesmos menus</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — Usuários Europeus</h2>
+      <p>Se você estiver no EEE ou no Reino Unido, uma caixa de diálogo de consentimento aparecerá quando você abrir o Daycell pela primeira vez perguntando se você concorda com a publicidade personalizada. Você pode retirar ou alterar seu consentimento a qualquer momento nas configurações do App. O controlador de dados para dados de publicidade é o <strong>Google LLC</strong>. O Daycell não processa dados pessoais em seus próprios servidores.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — Usuários da Califórnia</h2>
+      <p>O Daycell não vende suas informações pessoais. Quaisquer dados coletados por meio do Google AdMob são regidos pela própria conformidade com a CCPA do Google. Você pode cancelar anúncios personalizados conforme descrito na Seção 5.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>Nenhuma Conta Necessária</h2>
+      <p>O Daycell não exige que você crie uma conta, faça login ou forneça qualquer informação pessoal. Todos os recursos estão disponíveis sem que você se identifique.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>Privacidade das Crianças</h2>
+      <p>O Daycell não é direcionado a crianças menores de 13 anos. Não coletamos intencionalmente dados pessoais de crianças. O Google AdMob está configurado para veicular apenas anúncios não personalizados quando um usuário é identificado como criança.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>Alterações nesta Política</h2>
+      <p>Podemos atualizar esta Política de Privacidade de tempos em tempos. As alterações serão refletidas com uma data atualizada no topo desta página. O uso continuado do App após as alterações constitui aceitação da política atualizada.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>Fale Conosco</h2>
+      <p>Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco:</p>
+      <ul>
+        <li>E-mail: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>Site: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /pt -->
+
+  <!-- ══════════════ РУССКИЙ ══════════════ -->
+  <div data-lang="ru">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>Введение</h2>
+      <p>Добро пожаловать в Daycell. Настоящая Политика конфиденциальности объясняет, как приложение Daycell («Приложение») обрабатывает информацию при использовании нашего сервиса на iOS или Android. Мы стремимся защищать вашу конфиденциальность.</p>
+      <p>Последнее обновление: <strong>7 июня 2025 г.</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>Какую информацию мы собираем</h2>
+      <p><strong>Само приложение Daycell</strong> не собирает, не хранит и не передаёт никакую личную информацию. Мы не собираем:</p>
+      <ul>
+        <li>Ваше имя, адрес электронной почты или контактную информацию</li>
+        <li>Учётные данные (учётная запись не требуется)</li>
+        <li>Ваши заметки или любой контент, который вы создаёте в Приложении</li>
+        <li>Аналитику использования или поведенческие данные</li>
+      </ul>
+      <p><strong>Google AdMob</strong> (наш рекламный провайдер) может собирать:</p>
+      <ul>
+        <li>Рекламный идентификатор (IDFA на iOS / GAID на Android)</li>
+        <li>Приблизительное местоположение (уровень страны/региона)</li>
+        <li>Информацию об устройстве (модель, версия ОС)</li>
+        <li>Данные о взаимодействии с рекламой (клики, показы)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>Как хранятся ваши заметки</h2>
+      <p>Все заметки и записи, которые вы создаёте в Daycell, хранятся <strong>исключительно на вашем локальном устройстве</strong>. Эти данные никогда не покидают ваше устройство и никогда не передаются на какой-либо сервер, облачный сервис или третьим лицам, включая нас. Мы не имеем доступа к вашим заметкам ни при каких обстоятельствах.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>Реклама — Google AdMob</h2>
+      <p>Daycell показывает рекламу через <strong>Google AdMob</strong> (Google LLC). AdMob может использовать рекламный идентификатор вашего устройства для показа релевантной рекламы.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> Перед показом персонализированной рекламы Приложение запросит ваше разрешение через систему прозрачности отслеживания приложений (ATT) от Apple. Вы можете разрешить или запретить в любое время.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> В регионах, подпадающих под действие GDPR (ЕЭЗ и Великобритания), перед показом персонализированной рекламы появится диалоговое окно согласия UMP от Google.</p>
+      </div>
+
+      <p>Подробнее о том, как Google использует рекламные данные:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>Ваш выбор в отношении рекламы</h2>
+      <p>Вы можете отказаться от персонализированной рекламы в любое время:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> Настройки → Конфиденциальность и безопасность → Отслеживание → отключить для Daycell</li>
+        <li><strong>Android:</strong> Настройки → Google → Реклама → «Отключить персонализацию рекламы»</li>
+        <li>Вы также можете сбросить свой рекламный идентификатор в этих же меню</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — Европейские пользователи</h2>
+      <p>Если вы находитесь в ЕЭЗ или Великобритании, при первом открытии Daycell появится диалоговое окно согласия с вопросом, согласны ли вы на персонализированную рекламу. Вы можете отозвать или изменить своё согласие в любое время в настройках Приложения. Контролёром рекламных данных является <strong>Google LLC</strong>. Daycell не обрабатывает личные данные на собственных серверах.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — Пользователи из Калифорнии</h2>
+      <p>Daycell не продаёт вашу личную информацию. Любые данные, собранные через Google AdMob, регулируются собственным соответствием Google требованиям CCPA. Вы можете отказаться от персонализированной рекламы, как описано в Разделе 5.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>Учётная запись не требуется</h2>
+      <p>Daycell не требует создавать учётную запись, входить в систему или предоставлять какую-либо личную информацию. Все функции доступны без идентификации личности.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>Конфиденциальность детей</h2>
+      <p>Daycell не предназначен для детей младше 13 лет. Мы сознательно не собираем личные данные детей. Google AdMob настроен на показ только неперсонализированной рекламы, когда пользователь определяется как ребёнок.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>Изменения в этой Политике</h2>
+      <p>Мы можем время от времени обновлять настоящую Политику конфиденциальности. Изменения будут отражены с обновлённой датой вверху этой страницы. Продолжение использования Приложения после изменений означает принятие обновлённой политики.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>Свяжитесь с нами</h2>
+      <p>Если у вас есть вопросы о настоящей Политике конфиденциальности, свяжитесь с нами:</p>
+      <ul>
+        <li>Электронная почта: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>Веб-сайт: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /ru -->
+
+  <!-- ══════════════ 日本語 ══════════════ -->
+  <div data-lang="ja">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>はじめに</h2>
+      <p>Daycell へようこそ。本プライバシーポリシーは、iOS または Android で当社のサービスをご利用いただく際に、Daycell アプリケーション（「本アプリ」）が情報をどのように取り扱うかについて説明します。当社はお客様のプライバシー保護に努めています。</p>
+      <p>最終更新日：<strong>2025年6月7日</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>収集する情報</h2>
+      <p><strong>Daycell 自体</strong>は、いかなる個人情報も収集、保存、送信しません。当社が収集しないもの：</p>
+      <ul>
+        <li>お客様の氏名、メールアドレス、連絡先情報</li>
+        <li>アカウント認証情報（アカウントは不要です）</li>
+        <li>お客様のメモや本アプリ内で作成したコンテンツ</li>
+        <li>利用状況分析や行動データ</li>
+      </ul>
+      <p><strong>Google AdMob</strong>（当社の広告プロバイダー）は以下を収集する場合があります：</p>
+      <ul>
+        <li>広告 ID（iOS の IDFA / Android の GAID）</li>
+        <li>おおよその位置情報（国／地域レベル）</li>
+        <li>デバイス情報（機種、OS バージョン）</li>
+        <li>広告インタラクションデータ（クリック、インプレッション）</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>メモの保存方法</h2>
+      <p>Daycell で作成したすべてのメモとエントリーは、<strong>お客様のローカルデバイスにのみ</strong>保存されます。このデータがお客様のデバイスから外に出ることは決してなく、当社を含むいかなるサーバー、クラウドサービス、第三者にも送信されません。当社はいかなる状況においてもお客様のメモにアクセスできません。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>広告 — Google AdMob</h2>
+      <p>Daycell は <strong>Google AdMob</strong>（Google LLC）を通じて広告を表示します。AdMob は関連性の高い広告を配信するために、お客様のデバイスの広告 ID を使用する場合があります。</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS：</strong>パーソナライズド広告を表示する前に、本アプリは Apple の App Tracking Transparency（ATT）フレームワークを通じてお客様の許可を求めます。いつでも許可または拒否できます。</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android：</strong>GDPR の対象地域（EEA および英国）では、パーソナライズド広告を表示する前に Google の UMP 同意ダイアログが表示されます。</p>
+      </div>
+
+      <p>Google が広告データをどのように使用するかについての詳細：</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>広告に関する選択</h2>
+      <p>いつでもパーソナライズド広告をオプトアウトできます：</p>
+      <ul class="steps">
+        <li><strong>iOS：</strong>設定 → プライバシーとセキュリティ → トラッキング → Daycell を無効にする</li>
+        <li><strong>Android：</strong>設定 → Google → 広告 → 「広告のパーソナライズをオプトアウト」</li>
+        <li>同じメニューから広告 ID をリセットすることもできます</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — ヨーロッパのユーザー</h2>
+      <p>EEA または英国にお住まいの場合、Daycell を初めて開いたときに、パーソナライズド広告に同意するかどうかを尋ねる同意ダイアログが表示されます。本アプリの設定内でいつでも同意を撤回または変更できます。広告データの管理者は <strong>Google LLC</strong> です。Daycell は自社サーバーで個人データを処理しません。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — カリフォルニアのユーザー</h2>
+      <p>Daycell はお客様の個人情報を販売しません。Google AdMob を通じて収集されたデータは、Google 独自の CCPA 準拠に従います。第 5 条に記載の通り、パーソナライズド広告をオプトアウトできます。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>アカウント不要</h2>
+      <p>Daycell では、アカウントの作成、ログイン、個人情報の提供は必要ありません。本人確認なしですべての機能をご利用いただけます。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>子供のプライバシー</h2>
+      <p>Daycell は 13 歳未満の子供を対象としていません。当社は子供から故意に個人データを収集することはありません。Google AdMob は、ユーザーが子供と識別された場合、非パーソナライズド広告のみを配信するように構成されています。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>本ポリシーの変更</h2>
+      <p>当社は本プライバシーポリシーを随時更新する場合があります。変更はこのページ上部の更新日に反映されます。変更後も本アプリを継続してご利用いただくことは、更新されたポリシーへの同意を意味します。</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>お問い合わせ</h2>
+      <p>本プライバシーポリシーについてご質問がある場合は、当社までお問い合わせください：</p>
+      <ul>
+        <li>メール：<a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>ウェブサイト：<a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /ja -->
+
+  <!-- ══════════════ DEUTSCH ══════════════ -->
+  <div data-lang="de">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>Einführung</h2>
+      <p>Willkommen bei Daycell. Diese Datenschutzrichtlinie erläutert, wie die Daycell-Anwendung („App") mit Informationen umgeht, wenn Sie unseren Dienst unter iOS oder Android nutzen. Wir verpflichten uns, Ihre Privatsphäre zu schützen.</p>
+      <p>Zuletzt aktualisiert: <strong>7. Juni 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>Informationen, die wir erfassen</h2>
+      <p><strong>Daycell selbst</strong> erfasst, speichert oder überträgt keine personenbezogenen Daten. Wir erfassen nicht:</p>
+      <ul>
+        <li>Ihren Namen, Ihre E-Mail-Adresse oder Kontaktdaten</li>
+        <li>Anmeldedaten (kein Konto erforderlich)</li>
+        <li>Ihre Notizen oder Inhalte, die Sie in der App erstellen</li>
+        <li>Nutzungsanalysen oder Verhaltensdaten</li>
+      </ul>
+      <p><strong>Google AdMob</strong> (unser Werbeanbieter) kann Folgendes erfassen:</p>
+      <ul>
+        <li>Werbe-ID (IDFA unter iOS / GAID unter Android)</li>
+        <li>Ungefährer Standort (Land-/Regionsebene)</li>
+        <li>Geräteinformationen (Modell, Betriebssystemversion)</li>
+        <li>Werbeinteraktionsdaten (Klicks, Impressionen)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>Wie Ihre Notizen gespeichert werden</h2>
+      <p>Alle Notizen und Einträge, die Sie in Daycell erstellen, werden <strong>ausschließlich auf Ihrem lokalen Gerät</strong> gespeichert. Diese Daten verlassen niemals Ihr Gerät und werden niemals an einen Server, Cloud-Dienst oder Dritte – einschließlich uns – übertragen. Wir haben unter keinen Umständen Zugriff auf Ihre Notizen.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>Werbung — Google AdMob</h2>
+      <p>Daycell zeigt Werbung über <strong>Google AdMob</strong> (Google LLC) an. AdMob kann die Werbe-ID Ihres Geräts verwenden, um relevante Anzeigen zu schalten.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> Vor der Anzeige personalisierter Werbung fragt die App über Apples App-Tracking-Transparenz (ATT)-Framework Ihre Erlaubnis ab. Sie können jederzeit zustimmen oder ablehnen.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> In Regionen, die unter die DSGVO fallen (EWR und Großbritannien), erscheint vor der Anzeige personalisierter Werbung der UMP-Einwilligungsdialog von Google.</p>
+      </div>
+
+      <p>Weitere Informationen darüber, wie Google Werbedaten verwendet:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>Ihre Werbeoptionen</h2>
+      <p>Sie können personalisierte Werbung jederzeit deaktivieren:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> Einstellungen → Datenschutz &amp; Sicherheit → Tracking → für Daycell deaktivieren</li>
+        <li><strong>Android:</strong> Einstellungen → Google → Werbung → „Werbepersonalisierung deaktivieren"</li>
+        <li>Sie können Ihre Werbe-ID auch über dieselben Menüs zurücksetzen</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>DSGVO — Europäische Nutzer</h2>
+      <p>Wenn Sie sich im EWR oder in Großbritannien befinden, erscheint beim ersten Öffnen von Daycell ein Einwilligungsdialog, der Sie fragt, ob Sie personalisierter Werbung zustimmen. Sie können Ihre Einwilligung jederzeit in den App-Einstellungen widerrufen oder ändern. Der Verantwortliche für Werbedaten ist <strong>Google LLC</strong>. Daycell verarbeitet keine personenbezogenen Daten auf eigenen Servern.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — Nutzer in Kalifornien</h2>
+      <p>Daycell verkauft Ihre personenbezogenen Daten nicht. Alle über Google AdMob erfassten Daten unterliegen der eigenen CCPA-Konformität von Google. Sie können personalisierte Werbung wie in Abschnitt 5 beschrieben deaktivieren.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>Kein Konto erforderlich</h2>
+      <p>Daycell erfordert nicht, dass Sie ein Konto erstellen, sich anmelden oder personenbezogene Daten angeben. Alle Funktionen sind verfügbar, ohne dass Sie sich identifizieren müssen.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>Datenschutz für Kinder</h2>
+      <p>Daycell richtet sich nicht an Kinder unter 13 Jahren. Wir erfassen wissentlich keine personenbezogenen Daten von Kindern. Google AdMob ist so konfiguriert, dass nur nicht personalisierte Werbung geschaltet wird, wenn ein Nutzer als Kind identifiziert wird.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>Änderungen dieser Richtlinie</h2>
+      <p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden mit einem aktualisierten Datum oben auf dieser Seite angezeigt. Die fortgesetzte Nutzung der App nach Änderungen gilt als Annahme der aktualisierten Richtlinie.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>Kontakt</h2>
+      <p>Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte:</p>
+      <ul>
+        <li>E-Mail: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>Website: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /de -->
+
+  <!-- ══════════════ FRANÇAIS ══════════════ -->
+  <div data-lang="fr">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>Introduction</h2>
+      <p>Bienvenue sur Daycell. Cette Politique de confidentialité explique comment l'application Daycell (« l'App ») traite les informations lorsque vous utilisez notre service sur iOS ou Android. Nous nous engageons à protéger votre vie privée.</p>
+      <p>Dernière mise à jour : <strong>7 juin 2025</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>Informations que nous collectons</h2>
+      <p><strong>Daycell lui-même</strong> ne collecte, ne stocke ni ne transmet aucune information personnelle. Nous ne collectons pas :</p>
+      <ul>
+        <li>Votre nom, votre adresse e-mail ou vos coordonnées</li>
+        <li>Vos identifiants de compte (aucun compte requis)</li>
+        <li>Vos notes ou tout contenu que vous créez dans l'App</li>
+        <li>Des analyses d'utilisation ou des données comportementales</li>
+      </ul>
+      <p><strong>Google AdMob</strong> (notre fournisseur de publicité) peut collecter :</p>
+      <ul>
+        <li>L'identifiant publicitaire (IDFA sur iOS / GAID sur Android)</li>
+        <li>La localisation approximative (niveau pays/région)</li>
+        <li>Les informations sur l'appareil (modèle, version du système d'exploitation)</li>
+        <li>Les données d'interaction avec les publicités (clics, impressions)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>Comment vos notes sont stockées</h2>
+      <p>Toutes les notes et entrées que vous créez dans Daycell sont stockées <strong>exclusivement sur votre appareil local</strong>. Ces données ne quittent jamais votre appareil et ne sont jamais transmises à un serveur, un service cloud ou un tiers — y compris nous. Nous n'avons accès à vos notes en aucune circonstance.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>Publicité — Google AdMob</h2>
+      <p>Daycell affiche des publicités via <strong>Google AdMob</strong> (Google LLC). AdMob peut utiliser l'identifiant publicitaire de votre appareil pour diffuser des publicités pertinentes.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS :</strong> Avant d'afficher des publicités personnalisées, l'App demandera votre autorisation via le cadre de Transparence du suivi des applications (ATT) d'Apple. Vous pouvez autoriser ou refuser à tout moment.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android :</strong> Dans les régions couvertes par le RGPD (EEE et Royaume-Uni), la boîte de dialogue de consentement UMP de Google apparaîtra avant l'affichage de publicités personnalisées.</p>
+      </div>
+
+      <p>Pour en savoir plus sur la façon dont Google utilise les données publicitaires :</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>Vos choix en matière de publicité</h2>
+      <p>Vous pouvez désactiver la publicité personnalisée à tout moment :</p>
+      <ul class="steps">
+        <li><strong>iOS :</strong> Réglages → Confidentialité et sécurité → Suivi → désactiver pour Daycell</li>
+        <li><strong>Android :</strong> Paramètres → Google → Annonces → « Désactiver la personnalisation des annonces »</li>
+        <li>Vous pouvez également réinitialiser votre identifiant publicitaire depuis ces mêmes menus</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>RGPD — Utilisateurs européens</h2>
+      <p>Si vous vous trouvez dans l'EEE ou au Royaume-Uni, une boîte de dialogue de consentement apparaîtra lors de votre première ouverture de Daycell vous demandant si vous acceptez la publicité personnalisée. Vous pouvez retirer ou modifier votre consentement à tout moment dans les paramètres de l'App. Le responsable du traitement des données publicitaires est <strong>Google LLC</strong>. Daycell ne traite aucune donnée personnelle sur ses propres serveurs.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — Utilisateurs de Californie</h2>
+      <p>Daycell ne vend pas vos informations personnelles. Toutes les données collectées via Google AdMob sont régies par la propre conformité CCPA de Google. Vous pouvez désactiver les publicités personnalisées comme décrit à la Section 5.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>Aucun compte requis</h2>
+      <p>Daycell ne vous oblige pas à créer un compte, à vous connecter ou à fournir des informations personnelles. Toutes les fonctionnalités sont disponibles sans vous identifier.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>Confidentialité des enfants</h2>
+      <p>Daycell ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données personnelles auprès des enfants. Google AdMob est configuré pour ne diffuser que des publicités non personnalisées lorsqu'un utilisateur est identifié comme un enfant.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>Modifications de cette politique</h2>
+      <p>Nous pouvons mettre à jour cette Politique de confidentialité de temps à autre. Les modifications seront reflétées par une date mise à jour en haut de cette page. La poursuite de l'utilisation de l'App après les modifications constitue l'acceptation de la politique mise à jour.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>Nous contacter</h2>
+      <p>Si vous avez des questions concernant cette Politique de confidentialité, veuillez nous contacter :</p>
+      <ul>
+        <li>E-mail : <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>Site web : <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /fr -->
+
+  <!-- ══════════════ 한국어 ══════════════ -->
+  <div data-lang="ko">
+
+    <div class="section-block">
+      <span class="section-num">01</span>
+      <h2>소개</h2>
+      <p>Daycell에 오신 것을 환영합니다. 이 개인정보 처리방침은 iOS 또는 Android에서 당사 서비스를 사용할 때 Daycell 애플리케이션("앱")이 정보를 어떻게 처리하는지 설명합니다. 당사는 귀하의 개인정보 보호에 최선을 다하고 있습니다.</p>
+      <p>최종 업데이트: <strong>2025년 6월 7일</strong></p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">02</span>
+      <h2>수집하는 정보</h2>
+      <p><strong>Daycell 자체</strong>는 어떠한 개인정보도 수집, 저장 또는 전송하지 않습니다. 당사가 수집하지 않는 것:</p>
+      <ul>
+        <li>귀하의 이름, 이메일 주소 또는 연락처 정보</li>
+        <li>계정 자격 증명(계정 불필요)</li>
+        <li>귀하의 메모 또는 앱에서 생성한 콘텐츠</li>
+        <li>사용 분석 또는 행동 데이터</li>
+      </ul>
+      <p><strong>Google AdMob</strong>(당사의 광고 제공업체)는 다음을 수집할 수 있습니다:</p>
+      <ul>
+        <li>광고 ID(iOS의 IDFA / Android의 GAID)</li>
+        <li>대략적인 위치(국가/지역 수준)</li>
+        <li>기기 정보(모델, OS 버전)</li>
+        <li>광고 상호작용 데이터(클릭, 노출)</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">03</span>
+      <h2>메모 저장 방식</h2>
+      <p>Daycell에서 생성한 모든 메모와 항목은 <strong>오직 귀하의 로컬 기기에만</strong> 저장됩니다. 이 데이터는 절대 귀하의 기기를 벗어나지 않으며, 당사를 포함한 어떠한 서버, 클라우드 서비스 또는 제3자에게도 전송되지 않습니다. 당사는 어떠한 경우에도 귀하의 메모에 접근할 수 없습니다.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">04</span>
+      <h2>광고 — Google AdMob</h2>
+      <p>Daycell은 <strong>Google AdMob</strong>(Google LLC)을 통해 광고를 표시합니다. AdMob은 관련성 있는 광고를 게재하기 위해 귀하 기기의 광고 ID를 사용할 수 있습니다.</p>
+
+      <div class="admob-box">
+        <p>📱 <strong>iOS:</strong> 맞춤형 광고를 표시하기 전에 앱은 Apple의 앱 추적 투명성(ATT) 프레임워크를 통해 귀하의 허가를 요청합니다. 언제든지 허용하거나 거부할 수 있습니다.</p>
+      </div>
+      <div class="admob-box">
+        <p>🤖 <strong>Android:</strong> GDPR이 적용되는 지역(EEA 및 영국)에서는 맞춤형 광고를 표시하기 전에 Google의 UMP 동의 대화상자가 나타납니다.</p>
+      </div>
+
+      <p>Google이 광고 데이터를 사용하는 방법에 대한 자세한 내용:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">05</span>
+      <h2>광고 선택</h2>
+      <p>언제든지 맞춤형 광고를 거부할 수 있습니다:</p>
+      <ul class="steps">
+        <li><strong>iOS:</strong> 설정 → 개인정보 보호 및 보안 → 추적 → Daycell 비활성화</li>
+        <li><strong>Android:</strong> 설정 → Google → 광고 → "광고 개인 최적화 선택 해제"</li>
+        <li>동일한 메뉴에서 광고 ID를 재설정할 수도 있습니다</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">06</span>
+      <h2>GDPR — 유럽 사용자</h2>
+      <p>EEA 또는 영국에 계신 경우 Daycell을 처음 열 때 맞춤형 광고에 동의하는지 묻는 동의 대화상자가 나타납니다. 앱 설정에서 언제든지 동의를 철회하거나 변경할 수 있습니다. 광고 데이터의 데이터 관리자는 <strong>Google LLC</strong>입니다. Daycell은 자체 서버에서 개인 데이터를 처리하지 않습니다.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">07</span>
+      <h2>CCPA — 캘리포니아 사용자</h2>
+      <p>Daycell은 귀하의 개인정보를 판매하지 않습니다. Google AdMob을 통해 수집된 모든 데이터는 Google 자체의 CCPA 준수에 따릅니다. 제5조에 설명된 대로 맞춤형 광고를 거부할 수 있습니다.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">08</span>
+      <h2>계정 불필요</h2>
+      <p>Daycell은 계정 생성, 로그인 또는 개인정보 제공을 요구하지 않습니다. 신원을 밝히지 않고 모든 기능을 사용할 수 있습니다.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">09</span>
+      <h2>아동 개인정보 보호</h2>
+      <p>Daycell은 13세 미만 아동을 대상으로 하지 않습니다. 당사는 고의로 아동으로부터 개인 데이터를 수집하지 않습니다. Google AdMob은 사용자가 아동으로 식별될 경우 비맞춤형 광고만 게재하도록 구성되어 있습니다.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">10</span>
+      <h2>본 방침의 변경</h2>
+      <p>당사는 이 개인정보 처리방침을 수시로 업데이트할 수 있습니다. 변경 사항은 이 페이지 상단의 업데이트 날짜에 반영됩니다. 변경 후 앱을 계속 사용하는 것은 업데이트된 방침에 동의하는 것으로 간주됩니다.</p>
+    </div>
+
+    <div class="section-block">
+      <span class="section-num">11</span>
+      <h2>문의하기</h2>
+      <p>이 개인정보 처리방침에 대해 궁금한 점이 있으시면 문의해 주세요:</p>
+      <ul>
+        <li>이메일: <a href="mailto:privacy@daycellapp.com">privacy@daycellapp.com</a></li>
+        <li>웹사이트: <a href="https://daycellapp.com">daycellapp.com</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /ko -->
+
+</main>
+
+<footer>
+  <strong>Daycell</strong> &nbsp;·&nbsp; © 2025 &nbsp;·&nbsp; All rights reserved / Tüm hakları saklıdır
+</footer>
+
+<script>
+  const subtitles = {
+    en: 'Your 365-day journal, fully private.',
+    tr: '365 günlük notların, tamamen gizli.',
+    es: 'Tu diario de 365 días, totalmente privado.',
+    zh: '你的365天日记，完全私密。',
+    hi: 'आपकी 365-दिन की डायरी, पूरी तरह निजी।',
+    ar: 'يومياتك على مدار 365 يومًا، خاصة تمامًا.',
+    pt: 'Seu diário de 365 dias, totalmente privado.',
+    ru: 'Ваш дневник на 365 дней, полностью приватный.',
+    ja: '365日の日記、完全にプライベート。',
+    de: 'Dein 365-Tage-Tagebuch, vollständig privat.',
+    fr: 'Votre journal de 365 jours, entièrement privé.',
+    ko: '365일 일기, 완전히 비공개.'
+  };
+
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.langBtn === lang);
+    });
+    document.getElementById('header-sub').textContent = subtitles[lang] || subtitles.en;
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('lang', lang);
+  }
+</script>
+
+</body>
+</html>
